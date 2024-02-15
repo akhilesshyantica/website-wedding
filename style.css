@@ -137,6 +137,28 @@ body{
     color: red;
 }
 
+.info{
+    background-color: var(--bg);
+    color: white;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+}
+
+.info h2{
+    color: var(--blue);
+    font-family: 'Sacramento';
+    font-size: 5rem;
+    font-weight: bold;
+}
+.info .alamat{
+    font-size: 1.1rem;
+}
+
+.info .description{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
 /* Media Query */
 
 /* extra large */
