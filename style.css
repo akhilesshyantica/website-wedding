@@ -88,7 +88,10 @@ body{
 }
 
 .home h2,
-.story h2{
+.info h2,
+.story h2,
+.gallery h2
+{
     color: var(--blue);
     font-family: 'Sacramento';
     font-size: 5rem;
@@ -145,12 +148,6 @@ body{
     padding-bottom: 8rem;
 }
 
-.info h2{
-    color: var(--blue);
-    font-family: 'Sacramento';
-    font-size: 5rem;
-    font-weight: bold;
-}
 .info .alamat{
     font-size: 1.1rem;
 }
@@ -182,12 +179,14 @@ body{
 }
 
 /* STORY */
-.story{
+.story,
+.gallery{
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
 
-.story span {
+.story span,
+.gallery span {
     text-transform: uppercase;
     color: #666;
     font-size: 0.9rem;
@@ -195,7 +194,8 @@ body{
     display: block;
     margin-bottom: 1rem;
 }
-.story p{
+.story p,
+.gallery p{
     font-size: 1rem;
     font-weight: 300;
 }
@@ -299,7 +299,9 @@ body{
 
 }
 
-
+.gallery{
+    background-color: #cee3f3;
+}
 
 /* Media Query */
 
