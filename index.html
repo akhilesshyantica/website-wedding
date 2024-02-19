@@ -442,6 +442,7 @@
     <script>
         const rootElement = document.querySelector(":root");
         const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+        const audioIcon = document.querySelector('.audio-icon-wrapper i');
         const song = document.querySelector('#song');
         let isPlaying = false;
         
@@ -474,8 +475,12 @@
         audioIconWrapper.onclick = function(){
             if(isPlaying){
                 song.pause();
+                audioIcon.classList.remove('.bi-disc');
+                audioIcon.classList.add('bi-pause-circle');
             } else {
                 song.play();
+                audioIcon.classList.add('.bi-disc');
+                audioIcon.classList.remove('bi-pause-circle');
             }
 
             isPlaying = !isPlaying;
