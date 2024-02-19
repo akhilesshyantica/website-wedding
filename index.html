@@ -330,7 +330,9 @@
                 </div>
             </div>
 
-            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center">
+            <form id="my-form" class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+            method="POST" 
+            action="https://script.google.com/macros/s/AKfycbwU0ojBm1j7UthNQ8Q8GL3IeiiQtCivtcHquVikLdEuLKlHvTsKpMRpXMJ2UNN7p2JQXA/exec">
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
@@ -349,8 +351,8 @@
                         <label for="status" class="form-label">Konfirmasi</label>
                         <select name="status" id="status" class="form-select">
                             <option selected>Pilih salah satu</option>
-                            <option value="1">Hadir</option>
-                            <option value="0">Tidak Hadir</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
                         </select>
                       </div>
                 </div>
@@ -427,6 +429,29 @@
             disableScroll();
         }
     </script>
+
+<!-- Script untuk menghilangkan tampilan success pada button kirm rsvp -->
+<script>
+    window.addEventListener("load", function() {
+    const form = document.getElementById('my-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        alert("Konfirmasi Kehadiran Berhasil Dikirim!");
+      })
+    });
+  });
+</script>
+  
+
+
+
 </body>
 </html>
 
