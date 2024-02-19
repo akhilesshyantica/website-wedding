@@ -442,7 +442,9 @@
     <script>
         const rootElement = document.querySelector(":root");
         const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
-
+        const song = document.querySelector('#song');
+        let isPlaying = false;
+        
         function disableScroll() {
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
@@ -462,11 +464,21 @@
         }
 
         function playAudio() {
-            const song = document.querySelector('#song');
             song.volume = 0.1;
             audioIconWrapper.style.display = 'flex';
             song.play();
+            isPlaying = true;
+        }
 
+
+        audioIconWrapper.onclick = function(){
+            if(isPlaying){
+                song.pause();
+            } else {
+                song.play();
+            }
+
+            isPlaying = !isPlaying;
         }
 
         // if(!localStorage.getItem('opened')){
